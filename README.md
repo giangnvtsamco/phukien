@@ -33,4 +33,5 @@ Giao diện `index.html` (GitHub Pages) → Apps Script `Code.gs` (API, link `/e
 
 ## Phiên bản
 
+- **v1.0.1** (31/10/2026): thêm link chuyển giữa trang Đơn vị và trang Quản lý · Bảo vệ.
 - **v1.0** (31/10/2026): bản đầu theo quy chuẩn web app SAMCO. Mã đơn vị 6 số tách khỏi Mã ĐV nội bộ; phí tính theo từng phụ kiện; bàn phím số trên điện thoại; chế độ Sáng / Tối / Tự động; chống dò mã; chống chèn công thức vào Sheet.

@@ -125,6 +125,8 @@ button.btn:disabled{opacity:.45;cursor:not-allowed}
 /* đăng nhập */
 .login{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:24px 20px;display:flex;flex-direction:column;gap:16px;width:100%;max-width:420px;margin:6vh auto 0}
 .login .ttl{display:flex;flex-direction:column;gap:6px}
+.switch{display:block;width:max-content;margin:16px auto 0;padding:10px 16px;border-radius:999px;font-size:.84rem;font-weight:700;color:var(--muted);text-decoration:none}
+.switch:hover,.switch:focus-visible{color:var(--accent);background:var(--accent-soft)}
 .code-in{font-family:var(--mono)!important;font-size:1.5rem!important;letter-spacing:.4em!important;text-align:center;padding:14px!important;border-radius:14px!important}
 /* bàn phím số kiểu màn hình mật khẩu: chỉ hiện trên điện thoại (màn hình cảm ứng) */
 .pass{display:none;flex-direction:column;align-items:center;gap:20px;padding-top:4px}
@@ -223,6 +225,7 @@ window.addEventListener('error', function (e) {
       <div id="codeMsg"></div>
       <button class="btn block" type="submit">Tiếp tục</button>
     </form>
+    <a class="switch" href="./?page=admin">Quản lý · Bảo vệ →</a>
   </section>
 
   <!-- ===== ĐƠN VỊ: danh sách phiếu ===== -->
@@ -281,6 +284,7 @@ window.addEventListener('error', function (e) {
       <div id="pinMsg"></div>
       <button class="btn block" type="submit">Đăng nhập</button>
     </form>
+    <a class="switch" href="./">← Đơn vị lắp đặt</a>
   </section>
 
   <!-- ===== QUẢN LÝ: Hôm nay ===== -->
@@ -315,7 +319,7 @@ window.addEventListener('error', function (e) {
 <script>
 /* ===== DÁN LINK WEB APP APPS SCRIPT (kết thúc bằng /exec) VÀO ĐÂY ===== */
 const API_URL = 'https://script.google.com/macros/s/AKfycbzNL8_nkBIW0sxjGOpy7B0tbpHERQOJfWaa_kUWBh4ctFbj69C8vV9cGFnk8brHeoiS/exec';
-const VERSION = '1.0';
+const VERSION = '1.0.1';
 
 /* Mã ngẫu nhiên của trình duyệt này: Apps Script dùng để khóa tạm khi nhập sai mã quá nhiều lần */
 const DEV = (() => {
