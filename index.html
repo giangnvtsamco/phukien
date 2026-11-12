@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f2f4f7">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <title>Lắp đặt phụ kiện · SAMCO</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
@@ -225,7 +225,7 @@ window.addEventListener('error', function (e) {
       <div id="codeMsg"></div>
       <button class="btn block" type="submit">Tiếp tục</button>
     </form>
-    <a class="switch" href="./?page=admin">Quản lý · Bảo vệ →</a>
+    <a class="switch" href="quanly">Quản lý · Bảo vệ →</a>
   </section>
 
   <!-- ===== ĐƠN VỊ: danh sách phiếu ===== -->
@@ -316,9 +316,10 @@ window.addEventListener('error', function (e) {
 </main>
 </div>
 
+<script src="config.js"></script>
 <script>
 /* ===== DÁN LINK WEB APP APPS SCRIPT (kết thúc bằng /exec) VÀO ĐÂY ===== */
-const API_URL = 'https://script.google.com/macros/s/AKfycbzNL8_nkBIW0sxjGOpy7B0tbpHERQOJfWaa_kUWBh4ctFbj69C8vV9cGFnk8brHeoiS/exec';
+const API_URL = String(window.API_URL || ''); // link /exec nằm trong config.js
 const VERSION = '1.0.1';
 
 /* Mã ngẫu nhiên của trình duyệt này: Apps Script dùng để khóa tạm khi nhập sai mã quá nhiều lần */
@@ -611,7 +612,7 @@ $$('.pass').forEach(setupPass);
 
 /* ---------- KHỞI ĐỘNG ---------- */
 (async () => {
-  if (API_URL.indexOf('/exec') < 0) { document.querySelector('main').innerHTML = '<div class="banner bad">Chưa dán link Apps Script (/exec) vào index.html.</div>'; return; }
+  if (API_URL.indexOf('/exec') < 0) { document.querySelector('main').innerHTML = '<div class="banner bad">Chưa dán link Apps Script (/exec) vào config.js.</div>'; return; }
   try { CFG = await call('getConfig'); }
   catch (e) { document.querySelector('main').innerHTML = `<div class="banner bad">${esc(e)}</div>`; return; }
   const mon = nowT().slice(0, 7); $('payMonth').value = $('statMonth').value = mon; $('inBy').value = ss.get('by');
