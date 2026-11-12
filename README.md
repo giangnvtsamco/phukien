@@ -7,10 +7,11 @@ Web app quản lý ra vào và thu phí của đơn vị lắp đặt phụ ki�
 
 Giao diện `index.html` (GitHub Pages) → Apps Script `Code.gs` (API, link `/exec`) → Google Sheet.
 
+`Code.gs` chỉ nằm trong dự án Apps Script gắn với Sheet, không đưa lên GitHub.
+
 | File | Vai trò |
 | --- | --- |
 | `index.html` | Toàn bộ giao diện. Dòng `API_URL` chứa link `/exec` của Apps Script. |
-| `Code.gs` | Bản lưu của code Apps Script (dán vào trình chỉnh sửa Apps Script, không chạy trên GitHub). |
 | `CNAME` | Tên miền `phukien.vinfastsamcobinhtan.com`. |
 | `logo.png`, `favicon.*`, `apple-touch-icon.png` | Nhận diện SAMCO (giống app KSCL). |
 
